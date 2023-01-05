@@ -1,0 +1,61 @@
+.ant-collapse{
+    width: 300px;
+    position: absolute;
+    right: 0;
+    bottom: -53px;
+}
+.ant-collapse-header{
+    background: #4253c8;
+    border-radius: 10px 10px 0px 0px !important;
+}
+.ant-collapse-header-text{
+    color:white;
+    font-size: 17px;
+}
+
+ /* .ant-collapse-content{
+
+} */
+
+.ant-collapse-content-box{
+ height: 300px;
+ overflow: auto;
+ margin: 5px;
+} 
+
+.chat-header-text-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.contact-pic-small-chat{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.contact-name-pic-name-chat{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.chat-user-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.online-status{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+}

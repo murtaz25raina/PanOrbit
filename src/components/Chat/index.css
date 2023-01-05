@@ -1,60 +1,69 @@
-.ant-collapse{
-    width: 300px;
-    position: absolute;
-    right: 0;
-    bottom: -53px;
+.individual-chat-div{
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    right: 310px;
+    bottom: -57px;
 }
-.ant-collapse-header{
+.chat-textarea-container{
+ position: relative;
+}
+.chat-textarea{
+ width: 300px;
+ padding: 15px;
+ border: 1px solid #d9d9d9;
+ box-sizing: border-box;
+ outline: none;
+}
+.display-chat-div{
+ background: white;
+ border: 1px solid #d9d9d9;
+ height: 260px;
+}
+.display-chat-div-inner{
+    display: flex;
+    flex-direction: column;
+    height: 246px;
+    margin: 5px;
+    overflow: auto;  
+}
+
+.chat-header-div{
     background: #4253c8;
-    border-radius: 10px 10px 0px 0px !important;
-}
-.ant-collapse-header-text{
-    color:white;
-    font-size: 17px;
-}
-
- /* .ant-collapse-content{
-
-} */
-
-.ant-collapse-content-box{
- height: 300px;
- overflow: auto;
- margin: 5px;
-} 
-
-.chat-header-text-icon{
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    height: 55px;
+    width: 300px;
+    line-height: 55px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
 
-
-.contact-pic-small-chat{
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.contact-name-pic-name-chat{
+.close-down-chat-div{
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 40px;
-    line-height: 40px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
-.chat-user-div{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.message{
+    background-color: #f1f1f1;
+    width: 180px;
+    color: #757575;
+    padding: 7px;
 }
 
-.online-status{
-    width: 10px;
-    height: 10px;
-    background-color: green;
-    border-radius: 50%;
+.send-button{
+    font-weight: bolder;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    color: blue;
+    cursor: pointer;
+    text-align: center;
 }

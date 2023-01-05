@@ -1,73 +1,83 @@
 import React, { useState } from "react";
-import { Collapse } from "antd";
-import { ReactComponent as ChatIcon } from "../../assets/comment-alt.svg";
-import { ReactComponent as ArrowUp } from "../../assets/angle-up.svg";
 import { ReactComponent as ArrowDown } from "../../assets/angle-down.svg";
-import img_avatar from "../../assets/img_avatar.png";
+import { ReactComponent as ArrowUp } from "../../assets/angle-up.svg";
+import { SendOutlined,CloseOutlined } from "@ant-design/icons";
 import "./index.css";
-const { Panel } = Collapse;
 
 const Chat = (props) => {
-  const [arrowUpFlag, setArrowUpFlag] = useState(true);
-  const onChange = (key) => {
-    if (key.length > 0) {
-      setArrowUpFlag(false);
-    } else {
-      setArrowUpFlag(true);
-    }
-  };
+  const [showChatBody, setShowChatBody] = useState(true);
   return (
-    <Collapse onChange={onChange}>
-      <Panel
-        showArrow={false}
-        header={
-          <div
+    <div className="individual-chat-div">
+      <div className="chat-header-div">
+        <div>Murtaz Raina</div>
+        <div className="close-down-chat-div">
+          {showChatBody?<ArrowDown
+            onClick={() => setShowChatBody(false)}
             style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
+              width: "30px",
+              marginRight: "5px",
+              marginTop: "4px",
+              cursor: "pointer",
             }}
+          />:
+          <ArrowUp
+            onClick={() => setShowChatBody(true)}
+            style={{
+              width: "30px",
+              marginRight: "5px",
+              marginTop: "4px",
+              cursor: "pointer",
+            }}
+          />
+          
+          }
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => props.showChatHandler(false)}
           >
-            <div className="chat-header-text-icon">
-              <ChatIcon style={{ width: "30px" }} />
-              &nbsp;&nbsp;&nbsp;Chat
+            <CloseOutlined style={{ fontSize: "15px" }}/>
+          </span>
+        </div>
+      </div>
+      {showChatBody ? (
+        <>
+          <div className="display-chat-div">
+            <div className="display-chat-div-inner">
+              <p className="message" style={{ marginLeft: "25px" }}>
+                Lorem ipsum dolor sit amet, consectetur
+              </p>
+              <p className="message" style={{ marginLeft: "25px" }}>
+                Lorem ipsum dolor sit
+              </p>
+              <span
+                style={{ margin: "auto", fontSize: "15px", color: "#b9afaf" }}
+              >
+                9:16 PM
+              </span>
+              <p className="message" style={{ marginLeft: "80px" }}>
+                Lorem ipsum dolor
+              </p>
+              <p className="message" style={{ marginLeft: "80px" }}>
+                Lorem ipsum
+              </p>
+              <p className="message" style={{ marginLeft: "80px" }}>
+                Lorem
+              </p>
             </div>
-            {arrowUpFlag ? (
-              <ArrowUp style={{ width: "30px" }} />
-            ) : (
-              <ArrowDown style={{ width: "30px" }} />
-            )}
           </div>
-        }
-      >
-        {props.fetchedUsers && props.fetchedUsers.length > 0
-          ? props.fetchedUsers.map((user) => {
-              if (user.id !== props.loggedUserDetails.id) {
-                return (
-                  <div className="chat-user-div">
-                  <div className="contact-name-pic-name-chat">
-                    <img
-                      className="contact-pic-small-chat"
-                      onError={({ currentTarget }) => {
-                        currentTarget.onerror = null; // prevents looping
-                        currentTarget.src = img_avatar;
-                      }}
-                      src={user.profilepicture}
-                      alt="PP"
-                    />
-                    <div style={{ fontSize: "17px" }}>{user.name}</div>
-                  </div>
-                  <div className="online-status"></div>
-                  </div>
-                );
-              }
-              else{
-                return false;
-              }
-            })
-          : null}
-      </Panel>
-    </Collapse>
+          <div className="chat-textare-container">
+            <textarea
+              style={{ resize: "none" }}
+              rows="1"
+              className="chat-textarea"
+            ></textarea>
+            <span className="send-button">
+              <SendOutlined style={{ fontSize: "25px" }} />
+            </span>
+          </div>
+        </>
+      ) : null}
+    </div>
   );
 };
 

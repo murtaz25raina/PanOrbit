@@ -3,11 +3,16 @@ import { Link, Outlet } from "react-router-dom";
 import {useSelector} from 'react-redux';
 import "./index.css";
 import ChangeProfile from "../ChangeProfile";
+import ChatList from "../ChatList";
 import Chat from "../Chat";
 
 
 const Home = () => {
   const [heading, setHeading] = useState("Profile");
+  const [showChat, setShowChat] = useState(false);
+  const showChatHandler=(flag)=>{
+    setShowChat(flag)
+  }
   const userLoggedinID = useSelector((state)=>state.login.userId);
   const fetchedUsers = useSelector((state)=>state.users.users);
   const loggedUserDetails = fetchedUsers.length>0 ?  fetchedUsers.find(user => user.id === userLoggedinID):null;
@@ -60,7 +65,8 @@ const Home = () => {
           <Outlet/>
         </div>
         <div className="chat-outer-div">
-          <Chat fetchedUsers={fetchedUsers} loggedUserDetails={loggedUserDetails}/>
+          {showChat?<Chat showChatHandler={showChatHandler} />:null}
+          <ChatList showChatHandler={showChatHandler} fetchedUsers={fetchedUsers} loggedUserDetails={loggedUserDetails}/>
         </div>
       </div>
     </div>
