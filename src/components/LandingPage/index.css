@@ -1,0 +1,11 @@
+.landing-page{
+    background-image: url("../../assets/background-landing.jpg");
+    background-size:  contain;
+    background-repeat : no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+.background-color{
+    height: 100px;
+    background-color: #6735ca ;
+}
