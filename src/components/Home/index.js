@@ -3,6 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import {useSelector} from 'react-redux';
 import "./index.css";
 import ChangeProfile from "../ChangeProfile";
+import Chat from "../Chat";
+
 
 const Home = () => {
   const [heading, setHeading] = useState("Profile");
@@ -56,6 +58,9 @@ const Home = () => {
         </div>
         <div className="outlet-home">
           <Outlet/>
+        </div>
+        <div className="chat-outer-div">
+          <Chat fetchedUsers={fetchedUsers} loggedUserDetails={loggedUserDetails}/>
         </div>
       </div>
     </div>
