@@ -10,8 +10,10 @@ import Chat from "../Chat";
 const Home = () => {
   const [heading, setHeading] = useState("Profile");
   const [showChat, setShowChat] = useState(false);
-  const showChatHandler=(flag)=>{
+  const [selectedChatUser,setSelectedChatUser] = useState({});
+  const showChatHandler=(flag,selectedUser)=>{
     setShowChat(flag)
+    setSelectedChatUser(selectedUser);
   }
   const userLoggedinID = useSelector((state)=>state.login.userId);
   const fetchedUsers = useSelector((state)=>state.users.users);
@@ -65,7 +67,7 @@ const Home = () => {
           <Outlet/>
         </div>
         <div className="chat-outer-div">
-          {showChat?<Chat showChatHandler={showChatHandler} />:null}
+          {showChat?<Chat selectedChatUser={selectedChatUser} showChatHandler={showChatHandler} />:null}
           <ChatList showChatHandler={showChatHandler} fetchedUsers={fetchedUsers} loggedUserDetails={loggedUserDetails}/>
         </div>
       </div>

@@ -41,11 +41,11 @@ const ChatList = (props) => {
         }
       >
         {props.fetchedUsers && props.fetchedUsers.length > 0
-          ? props.fetchedUsers.map((user) => {
+          ? props.fetchedUsers.map((user,index) => {
               if (user.id !== props.loggedUserDetails.id) {
                 return (
                   <div className="chat-user-div">
-                  <div className="contact-name-pic-name-chat" onClick={()=>props.showChatHandler(true)}>
+                  <div className="contact-name-pic-name-chat" onClick={()=>props.showChatHandler(true,user)}>
                     <img
                       className="contact-pic-small-chat"
                       onError={({ currentTarget }) => {
@@ -57,7 +57,7 @@ const ChatList = (props) => {
                     />
                     <div style={{ fontSize: "17px" }}>{user.name}</div>
                   </div>
-                  <div className="online-status"></div>
+                  {index%2!==0?<div className="online-status"></div>:<div className="offline-status"></div>}
                   </div>
                 );
               }

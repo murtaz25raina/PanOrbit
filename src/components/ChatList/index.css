@@ -59,3 +59,9 @@
     background-color: green;
     border-radius: 50%;
 }
+.offline-status{
+    width: 10px;
+    height: 10px;
+    background-color: #e7e7e7;
+    border-radius: 50%;
+}

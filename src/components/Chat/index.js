@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ReactComponent as ArrowDown } from "../../assets/angle-down.svg";
 import { ReactComponent as ArrowUp } from "../../assets/angle-up.svg";
 import { SendOutlined,CloseOutlined } from "@ant-design/icons";
+import img_avatar from "../../assets/img_avatar.png";
 import "./index.css";
 
 const Chat = (props) => {
@@ -9,7 +10,18 @@ const Chat = (props) => {
   return (
     <div className="individual-chat-div">
       <div className="chat-header-div">
-        <div>Murtaz Raina</div>
+        <div className="contact-name-pic-name-chat">
+        <img
+                      className="contact-pic-small-chat"
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null; // prevents looping
+                        currentTarget.src = img_avatar;
+                      }}
+                      src={props.selectedChatUser?.profilepicture}
+                      alt="PP"
+                    />
+                    <div style={{ fontSize: "17px" }}>{props.selectedChatUser?.name}</div>
+        </div>
         <div className="close-down-chat-div">
           {showChatBody?<ArrowDown
             onClick={() => setShowChatBody(false)}
@@ -33,7 +45,7 @@ const Chat = (props) => {
           }
           <span
             style={{ cursor: "pointer" }}
-            onClick={() => props.showChatHandler(false)}
+            onClick={() => props.showChatHandler(false,{})}
           >
             <CloseOutlined style={{ fontSize: "15px" }}/>
           </span>
