@@ -41,27 +41,33 @@ const ChatList = (props) => {
         }
       >
         {props.fetchedUsers && props.fetchedUsers.length > 0
-          ? props.fetchedUsers.map((user,index) => {
+          ? props.fetchedUsers.map((user, index) => {
               if (user.id !== props.loggedUserDetails.id) {
                 return (
                   <div className="chat-user-div">
-                  <div className="contact-name-pic-name-chat" onClick={()=>props.showChatHandler(true,user)}>
-                    <img
-                      className="contact-pic-small-chat"
-                      onError={({ currentTarget }) => {
-                        currentTarget.onerror = null; // prevents looping
-                        currentTarget.src = img_avatar;
-                      }}
-                      src={user.profilepicture}
-                      alt="PP"
-                    />
-                    <div style={{ fontSize: "17px" }}>{user.name}</div>
-                  </div>
-                  {index%2!==0?<div className="online-status"></div>:<div className="offline-status"></div>}
+                    <div
+                      className="contact-name-pic-name-chat"
+                      onClick={() => props.showChatHandler(true, user)}
+                    >
+                      <img
+                        className="contact-pic-small-chat"
+                        onError={({ currentTarget }) => {
+                          currentTarget.onerror = null; // prevents looping
+                          currentTarget.src = img_avatar;
+                        }}
+                        src={user.profilepicture}
+                        alt="PP"
+                      />
+                      <div style={{ fontSize: "17px" }}>{user.name}</div>
+                    </div>
+                    {index % 2 !== 0 ? (
+                      <div className="online-status"></div>
+                    ) : (
+                      <div className="offline-status"></div>
+                    )}
                   </div>
                 );
-              }
-              else{
+              } else {
                 return false;
               }
             })

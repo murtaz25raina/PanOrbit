@@ -1,69 +1,69 @@
-.individual-chat-div{
-    display: flex;
-    flex-direction: column;
-    position:absolute;
-    right: 310px;
-    bottom: -57px;
+.individual-chat-div {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 310px;
+  bottom: -57px;
 }
-.chat-textarea-container{
- position: relative;
+.chat-textarea-container {
+  position: relative;
 }
-.chat-textarea{
- width: 300px;
- padding: 15px;
- border: 1px solid #d9d9d9;
- box-sizing: border-box;
- outline: none;
+.chat-textarea {
+  width: 300px;
+  padding: 15px;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  outline: none;
 }
-.display-chat-div{
- background: white;
- border: 1px solid #d9d9d9;
- height: 260px;
+.display-chat-div {
+  background: white;
+  border: 1px solid #d9d9d9;
+  height: 260px;
 }
-.display-chat-div-inner{
-    display: flex;
-    flex-direction: column;
-    height: 246px;
-    margin: 5px;
-    overflow: auto;  
-}
-
-.chat-header-div{
-    background: #4253c8;
-    border-radius: 10px 10px 0px 0px;
-    color: white;
-    height: 55px;
-    width: 300px;
-    line-height: 55px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 10px;
-    box-sizing: border-box;
+.display-chat-div-inner {
+  display: flex;
+  flex-direction: column;
+  height: 246px;
+  margin: 5px;
+  overflow: auto;
 }
 
-.close-down-chat-div{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 20px;
-    font-weight: 600;
+.chat-header-div {
+  background: #4253c8;
+  border-radius: 10px 10px 0px 0px;
+  color: white;
+  height: 55px;
+  width: 300px;
+  line-height: 55px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  box-sizing: border-box;
 }
 
-.message{
-    background-color: #f1f1f1;
-    width: 180px;
-    color: #757575;
-    padding: 7px;
+.close-down-chat-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.send-button{
-    font-weight: bolder;
-    position: absolute;
-    right: 10px;
-    bottom: 15px;
-    color: blue;
-    cursor: pointer;
-    text-align: center;
+.message {
+  background-color: #f1f1f1;
+  width: 180px;
+  color: #757575;
+  padding: 7px;
+}
+
+.send-button {
+  font-weight: bolder;
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  color: blue;
+  cursor: pointer;
+  text-align: center;
 }
